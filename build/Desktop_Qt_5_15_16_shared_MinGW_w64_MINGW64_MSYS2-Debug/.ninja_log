@@ -1,0 +1,17 @@
+# ninja log v6
+15	2028	7779368545409910	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+15	2028	7779368545409910	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+15	2028	7779368545409910	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+15	2028	7779368545409910	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+2062	10492	7779368546766257	CMakeFiles/snake_CMake.dir/helpfield.cpp.obj	8b93ec2bb9ce17fb
+2045	10960	7779368546586732	CMakeFiles/snake_CMake.dir/main.cpp.obj	13623777b1610699
+2040	11393	7779368546546847	CMakeFiles/snake_CMake.dir/snake_CMake_autogen/mocs_compilation.cpp.obj	24f40434bfb9332e
+2051	11395	7779368546646584	CMakeFiles/snake_CMake.dir/mainwindow.cpp.obj	aa6e196f58251e1
+2056	12139	7779368546706420	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
+12139	12925	7779368647537816	snake_CMake.exe	7f58321cbf618569
+90	528	7779368854800380	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+90	528	7779368854800380	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+90	528	7779368854800380	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+90	528	7779368854800380	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+530	5235	7779368859188651	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
+5235	5620	7779368906243392	snake_CMake.exe	7f58321cbf618569

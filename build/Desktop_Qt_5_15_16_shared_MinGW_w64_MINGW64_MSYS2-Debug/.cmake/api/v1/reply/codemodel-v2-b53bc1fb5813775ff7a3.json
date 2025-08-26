@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-1af0b6ad3eab6502db26.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "snake_CMake",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "snake_CMake::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-snake_CMake-Debug-e7bba15aafd67c0ae55a.json",
+					"name" : "snake_CMake",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "snake_CMake_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-snake_CMake_autogen-Debug-a1477cdc4af6ccc4e65e.json",
+					"name" : "snake_CMake_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "snake_CMake_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-snake_CMake_autogen_timestamp_deps-Debug-817d75fb565de47e9c49.json",
+					"name" : "snake_CMake_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug",
+		"source" : "C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

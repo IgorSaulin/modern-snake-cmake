@@ -1,0 +1,9 @@
+C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/snake_CMake.dir
+C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/edit_cache.dir
+C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/list_install_components.dir
+C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/install.dir
+C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/install/local.dir
+C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/install/strip.dir
+C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/snake_CMake_autogen_timestamp_deps.dir
+C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/snake_CMake_autogen.dir
