@@ -44,9 +44,8 @@ void GameField::paintEvent(QPaintEvent *e) //Отрисовка самой зм�
     for(int i = 0; i < m_snake->m_snakeBody.size(); i++)
     {
         painter.drawEllipse(m_snake->m_snakeBody[i] -> m_x * m_snakeItemSize, m_snake->m_snakeBody[i] -> m_y * m_snakeItemSize, m_snakeItemSize, m_snakeItemSize);
-        //painter.drawText(m_snake->m_snakeBody[0] -> m_x * m_snakeItemSize, m_snake->m_snakeBody[0] -> m_y * m_snakeItemSize, "0");
-        //painter.drawText(m_snake->m_snakeBody[1] -> m_x * m_snakeItemSize, m_snake->m_snakeBody[1] -> m_y * m_snakeItemSize, "1");
-        //painter.drawText(m_snake->m_snakeBody[2] -> m_x * m_snakeItemSize, m_snake->m_snakeBody[2] -> m_y * m_snakeItemSize, "2");
+        QString I =QString::number(i); //Преобразование номера элекмента к типу QString
+        painter.drawText(m_snake->m_snakeBody[i] -> m_x * m_snakeItemSize + 3, m_snake->m_snakeBody[i] -> m_y * m_snakeItemSize + 7, I); //Обозначение порядкового номера элемента
     }
     //Отрисовка еды
     painter.setBrush(foodBrush); //Кисть для отрисовки еды
@@ -76,24 +75,110 @@ void GameField::keyPressEvent(QKeyEvent *e)
     if(e->key() == Qt::Key_Left && m_snake->m_snakeDirection != Snake::SnakeDirection::right)
     {
         m_snake->m_snakeDirection = Snake::SnakeDirection::left;
+        //angle = 180;
+        if (angle < 0) //Блок кода, отвечает за ситуацию, когда область отсчета угла попала в отр. область
+        {
+            angle = 360 + angle;
+        }
+
+        if ((angle > 0)&&(angle < 180)) //Блок кода, отвечает за подсчет углов
+        {
+            angle = angle + 10;
+        }
+
+        else if ((angle > 180)&&(angle < 360))
+        {
+            angle = angle - 10;
+        }
+
+        else if (angle == 360)
+        {
+            angle = 0;
+        }
+
     }
     if(e->key() == Qt::Key_Right && m_snake->m_snakeDirection != Snake::SnakeDirection::left)
     {
         m_snake->m_snakeDirection = Snake::SnakeDirection::right;
 
-        angle = angle + 10; //Увеличение угла на градус
-        if (angle == 360)
+        if (angle < 0) //Блок кода, отвечает за ситуацию, когда область отсчета угла попала в отр. область
+        {
+            angle = 360 + angle;
+        }
+
+        if ((angle > 0)&&(angle < 180)) //Блок кода, отвечает за подсчет углов
+        {
+            angle = angle - 10;
+        }
+
+        else if ((angle > 180)&&(angle < 360))
+        {
+            angle = angle + 10;
+        }
+
+        else if (angle == 360)
         {
             angle = 0;
         }
+
     }
     if(e->key() == Qt::Key_Down && m_snake->m_snakeDirection != Snake::SnakeDirection::up)
     {
         m_snake->m_snakeDirection = Snake::SnakeDirection::down;
+        //angle = 270;
+        if (angle < 0) //Блок кода, отвечает за ситуацию, когда область отсчета угла попала в отр. область
+        {
+            angle = 360 + angle;
+        }
+
+        if ((angle >= 0)&&(angle < 90)) //Блок кода, отвечает за подсчет углов
+        {
+            angle = angle - 10;
+        }
+
+        else if ((angle > 270)&&(angle < 360))
+        {
+            angle = angle - 10;
+        }
+
+        else if ((angle > 90)&&(angle < 270))
+        {
+            angle = angle + 10;
+        }
+
+        else if (angle == 360)
+        {
+            angle = 0;
+        }
     }
     if(e->key() == Qt::Key_Up && m_snake->m_snakeDirection != Snake::SnakeDirection::down)
     {
         m_snake->m_snakeDirection = Snake::SnakeDirection::up;
+        //angle = 90;
+        if (angle < 0) //Блок кода, отвечает за ситуацию, когда область отсчета угла попала в отр. область
+        {
+            angle = 360 + angle;
+        }
+
+        if ((angle >= 0)&&(angle < 90)) //Блок кода, отвечает за подсчет углов
+        {
+            angle = angle + 10;
+        }
+
+        else if ((angle > 270)&&(angle < 360))
+        {
+            angle = angle + 10;
+        }
+
+        else if ((angle > 90)&&(angle < 270))
+        {
+            angle = angle - 10;
+        }
+
+        else if (angle == 360)
+        {
+            angle = 0;
+        }
     }
     m_isMoveBlocked = true;
 }
@@ -160,34 +245,40 @@ void GameField::MoveSnakeSlot()
     SnakeItem *newSnakeItem; //Голова змейки
     if(m_snake->m_snakeDirection == Snake::SnakeDirection::right)
     {
-        int Buffer_x = 0;
-        counter_x = counter_x + qCos(DegToRad(angle));
-        if ((counter_x > 1)&&(counter_x < 2))
+        /*Buffer_x = Buffer_x + qCos(DegToRad(angle));
+        if ((Buffer_x >= 1)&&(Buffer_x < 2))
         {
             qInfo() << "NEW x";
-            Buffer_x = 1; // qRound(counter_x);
-            counter_x = 0;
+            //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + 1, m_snake->m_snakeBody[0]->m_y);
+            Buffer_x = 0;
         }
-        qInfo() << "Counter x = " << counter_x;
-        qInfo() << "Buffer x = " << Buffer_x;
+        else if ((Buffer_x < -1)&&(Buffer_x > -2))
+        {
+            qInfo() << "NEW x";
+            //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x - 1, m_snake->m_snakeBody[0]->m_y);
+            Buffer_x = 0;
+        }*/
 
-        int Buffer_y = 0;
-        counter_y = counter_y + qSin(DegToRad(angle));
-        if ((counter_y > 1)&&(counter_y < 2))
+        /*Buffer_y = Buffer_y + qSin(DegToRad(angle));
+        if ((Buffer_y >= 1)&&(Buffer_y < 2))
         {
             qInfo() << "NEW y";
-            Buffer_y = 1;// qRound(counter_y);
-            counter_y = 0;
+            newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x, m_snake->m_snakeBody[0]->m_y + 1);
+            Buffer_y = 0;
         }
-        qInfo() << "Counter y = " << counter_y;
-        qInfo() << "Buffer y = " << Buffer_y;
+        else if ((Buffer_y < -1)&&(Buffer_y > -2))
+        {
+            qInfo() << "NEW y";
+            newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x, m_snake->m_snakeBody[0]->m_y - 1);
+            Buffer_y = 0;// qRound(counter_y);
+        }*/
 
         newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + 1, m_snake->m_snakeBody[0]->m_y);
         qInfo() << "Right";
         qInfo() << "x = " << (m_snake->m_snakeBody[0]->m_x);
         qInfo() << "cos a = " << qCos(DegToRad(angle));
         qInfo() << "sin a = " << qSin(DegToRad(angle));
-        qInfo() << "Angle = " << angle;
+        qInfo() << "Angle = " << angle; //Вывод информации о величине угла
         qInfo() << "Angle radian = " << DegToRad(angle);
 
     }
@@ -196,18 +287,21 @@ void GameField::MoveSnakeSlot()
     {
         newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x - 1, m_snake->m_snakeBody[0]->m_y);
         qInfo() << "Left";
+        qInfo() << "Angle = " << angle;
     }
 
     else if(m_snake->m_snakeDirection == Snake::SnakeDirection::up)
     {
         newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x, m_snake->m_snakeBody[0]->m_y - 1);
         qInfo() << "Up";
+        qInfo() << "Angle = " << angle;
     }
 
     else
     {
         newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x, m_snake->m_snakeBody[0]->m_y + 1);
         qInfo() << "Down";
+        qInfo() << "Angle = " << angle;
     }
     //Ограничение игрового поля
     /*Первоначально предполагалось, что змейка сможет перемещаться за пределы игрового поля:
