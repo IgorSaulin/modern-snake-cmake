@@ -183,12 +183,6 @@ void GameField::MoveSnakeSlot()
         qInfo() << "Buffer y = " << Buffer_y;
 
         newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + 1, m_snake->m_snakeBody[0]->m_y);
-        qInfo() << "Right";
-        qInfo() << "x = " << (m_snake->m_snakeBody[0]->m_x);
-        qInfo() << "cos a = " << qCos(DegToRad(angle));
-        qInfo() << "sin a = " << qSin(DegToRad(angle));
-        qInfo() << "Angle = " << angle;
-        qInfo() << "Angle radian = " << DegToRad(angle);
 
     }
 
