@@ -1,14 +1,9 @@
 #include "game.h"
+#include <QtMath> //Подключается для работы с синусом и косинусом
 
-double angle = 0;
-double counter_x = 0;
-double counter_y = 0;
-
-double DegToRad(double D) //Функция для перевода градусов в радианы
-{
-    double M=3.14/180;
-    return D*M;
-};
+bool logic_value_end_game; //Переменная защищает от двойного срабатывания функции завершения игры
+//Во время игры возможно одновременное срабатывания окончания игры как от пересечения звейки с самой собой, так и от
+//столковения с объектами
 
 GameField::GameField()
 {
@@ -44,9 +39,6 @@ void GameField::paintEvent(QPaintEvent *e) //Отрисовка самой зм�
     for(int i = 0; i < m_snake->m_snakeBody.size(); i++)
     {
         painter.drawEllipse(m_snake->m_snakeBody[i] -> m_x * m_snakeItemSize, m_snake->m_snakeBody[i] -> m_y * m_snakeItemSize, m_snakeItemSize, m_snakeItemSize);
-        //painter.drawText(m_snake->m_snakeBody[0] -> m_x * m_snakeItemSize, m_snake->m_snakeBody[0] -> m_y * m_snakeItemSize, "0");
-        //painter.drawText(m_snake->m_snakeBody[1] -> m_x * m_snakeItemSize, m_snake->m_snakeBody[1] -> m_y * m_snakeItemSize, "1");
-        //painter.drawText(m_snake->m_snakeBody[2] -> m_x * m_snakeItemSize, m_snake->m_snakeBody[2] -> m_y * m_snakeItemSize, "2");
     }
     //Отрисовка еды
     painter.setBrush(foodBrush); //Кисть для отрисовки еды
@@ -80,12 +72,6 @@ void GameField::keyPressEvent(QKeyEvent *e)
     if(e->key() == Qt::Key_Right && m_snake->m_snakeDirection != Snake::SnakeDirection::left)
     {
         m_snake->m_snakeDirection = Snake::SnakeDirection::right;
-
-        angle = angle + 10; //Увеличение угла на градус
-        if (angle == 360)
-        {
-            angle = 0;
-        }
     }
     if(e->key() == Qt::Key_Down && m_snake->m_snakeDirection != Snake::SnakeDirection::up)
     {
@@ -139,6 +125,8 @@ void GameField::StartNewGame()
     m_score = 0;
     QString text = "Счет : " + QString::number(m_score) + "\n пауза - ПРОБЕЛ";
     emit ChangeTextSignal(text);
+
+    logic_value_end_game = false;
 }
 
 void GameField::CreateFood()
@@ -160,48 +148,23 @@ void GameField::MoveSnakeSlot()
     SnakeItem *newSnakeItem; //Голова змейки
     if(m_snake->m_snakeDirection == Snake::SnakeDirection::right)
     {
-        int Buffer_x = 0;
-        counter_x = counter_x + qCos(DegToRad(angle));
-        if ((counter_x > 1)&&(counter_x < 2))
-        {
-            qInfo() << "NEW x";
-            Buffer_x = 1; // qRound(counter_x);
-            counter_x = 0;
-        }
-        qInfo() << "Counter x = " << counter_x;
-        qInfo() << "Buffer x = " << Buffer_x;
-
-        int Buffer_y = 0;
-        counter_y = counter_y + qSin(DegToRad(angle));
-        if ((counter_y > 1)&&(counter_y < 2))
-        {
-            qInfo() << "NEW y";
-            Buffer_y = 1;// qRound(counter_y);
-            counter_y = 0;
-        }
-        qInfo() << "Counter y = " << counter_y;
-        qInfo() << "Buffer y = " << Buffer_y;
-
-        newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + 1, m_snake->m_snakeBody[0]->m_y);
-
+        //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + 1, m_snake->m_snakeBody[0]->m_y);
+        newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + qCos(0.1745), m_snake->m_snakeBody[0]->m_y + qSin(0.1745));
     }
 
     else if(m_snake->m_snakeDirection == Snake::SnakeDirection::left)
     {
         newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x - 1, m_snake->m_snakeBody[0]->m_y);
-        qInfo() << "Left";
     }
 
     else if(m_snake->m_snakeDirection == Snake::SnakeDirection::up)
     {
         newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x, m_snake->m_snakeBody[0]->m_y - 1);
-        qInfo() << "Up";
     }
 
     else
     {
         newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x, m_snake->m_snakeBody[0]->m_y + 1);
-        qInfo() << "Down";
     }
     //Ограничение игрового поля
     /*Первоначально предполагалось, что змейка сможет перемещаться за пределы игрового поля:
@@ -209,37 +172,61 @@ void GameField::MoveSnakeSlot()
      ниже данные строки помечены как комментарии, чтобы, при необходимости, можно было вернуться
      к первоначальному варианту*/
 
-    if(newSnakeItem->m_x >= m_fieldSize)
+    if(newSnakeItem->m_x >= m_fieldSize && logic_value_end_game == false)
     {
         //newSnakeItem->m_x = 0;
+        logic_value_end_game = true;
         GameOver();
     }
-    else if(newSnakeItem->m_x < 0)
+    else if(newSnakeItem->m_x < 0 && logic_value_end_game == false)
     {
         //newSnakeItem->m_x = m_fieldSize - 1;
+        logic_value_end_game = true;
         GameOver();
     }
-    else if(newSnakeItem->m_y < 0)
+    else if(newSnakeItem->m_y < 0 && logic_value_end_game == false)
     {
         //newSnakeItem->m_y = m_fieldSize - 1;
+        logic_value_end_game = true;
         GameOver();
     }
-    else if(newSnakeItem->m_y >= m_fieldSize)
+    else if(newSnakeItem->m_y >= m_fieldSize && logic_value_end_game == false)
     {
         //newSnakeItem->m_y = 0;
+        logic_value_end_game = true;
         GameOver();
     }
     //Описание случая, когда игра проиграна
-    for(int i = 1; i < m_snake->m_snakeBody.size(); i++)
+    for(int i = 2; i < m_snake->m_snakeBody.size(); i++)
     {
         //Если голова змеи пересекается со своим телом, то игра прекращается
+        qreal x_0 = m_snake->m_snakeBody[i]->m_x;
+        qreal x_1 = m_snake->m_snakeBody[0]->m_x;
+        qreal y_0 = m_snake->m_snakeBody[i]->m_y;
+        qreal y_1 = m_snake->m_snakeBody[0]->m_y;
+
         if(m_snake->m_snakeBody[0]->m_x == m_snake->m_snakeBody[i]->m_x && m_snake->m_snakeBody[0]->m_y == m_snake->m_snakeBody[i]->m_y)
         {
             GameOver();
         }
+
+        else if((sqrt((x_1 - x_0)*(x_1 - x_0) + (y_1 - y_0)*(y_1 - y_0))) < 0.55 && logic_value_end_game == false)
+        {
+            GameOver();
+            logic_value_end_game = true;
+            break;
+        }
     }
     //Получение еды
     if(newSnakeItem->m_x == m_food->m_x && newSnakeItem->m_y == m_food->m_y)
+    {
+        m_score++;
+        CreateFood();
+        QString text = "Счет : " + QString::number(m_score) + "\n пауза - ПРОБЕЛ";
+        emit ChangeTextSignal(text);
+    }
+    //Получение еды для случая, когда змейка идет под углом
+    else if((sqrt((newSnakeItem->m_x - m_food->m_x)*(newSnakeItem->m_x - m_food->m_x) + (newSnakeItem->m_y - m_food->m_y)*(newSnakeItem->m_y - m_food->m_y))) <= 0.5)
     {
         m_score++;
         CreateFood();
@@ -255,7 +242,7 @@ void GameField::MoveSnakeSlot()
     repaint(); //Вызов таймера через функцию
 }
 
-SnakeItem::SnakeItem(int x, int y)
+SnakeItem::SnakeItem(qreal x, qreal y)
 {
     m_x = x;
     m_y = y;
@@ -263,7 +250,7 @@ SnakeItem::SnakeItem(int x, int y)
 
 Snake::Snake() //Класс отвечает за создание математической модели туловища змейки
 {
-    m_snakeBeginSize = 3; //Начальный размер змейки (3)
+    m_snakeBeginSize = 20; //Начальный размер змейки (3)
     for (int i =0; i < m_snakeBeginSize; i++) //Заполнение тела змейки
     {
         m_snakeBody.insert(0, new SnakeItem(i, 0));
