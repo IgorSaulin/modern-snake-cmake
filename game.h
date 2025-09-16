@@ -22,11 +22,11 @@ class SnakeItem
     friend GameField;
 
 public:
-    SnakeItem(int x, int y);
+    SnakeItem(qreal x, qreal y);//SnakeItem(int x, int y); //Замена типа данных для работы с дробными числами
 
 private:
-    int m_x;
-    int m_y;
+    qreal m_x; //int m_x;
+    qreal m_y; //int m_y; //Замена типа данных для работы с дробными числами
 };
 
 class Snake
