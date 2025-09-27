@@ -39,6 +39,7 @@ else()
             ${PROJECT_SOURCES}
             game.h game.cpp
             helpfield.h helpfield.cpp
+            resource.qrc
         )
     endif()
 endif()

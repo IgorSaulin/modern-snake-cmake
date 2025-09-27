@@ -1,100 +1,38 @@
 # ninja log v6
-62	447	7793114667881897	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-62	447	7793114667881897	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-62	447	7793114667881897	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-62	447	7793114667881897	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-2062	10492	7779368546766257	CMakeFiles/snake_CMake.dir/helpfield.cpp.obj	8b93ec2bb9ce17fb
-1933	8330	7787510208157042	CMakeFiles/snake_CMake.dir/main.cpp.obj	13623777b1610699
-1928	8671	7787510208107185	CMakeFiles/snake_CMake.dir/snake_CMake_autogen/mocs_compilation.cpp.obj	24f40434bfb9332e
-1939	8724	7787510208216876	CMakeFiles/snake_CMake.dir/mainwindow.cpp.obj	aa6e196f58251e1
-449	5451	7793114671751109	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5451	5904	7793114721771168	snake_CMake.exe	7f58321cbf618569
-150	1971	7796634106812351	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-150	1971	7796634106812351	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-150	1971	7796634106812351	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-150	1971	7796634106812351	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-1978	9064	7796634107765137	CMakeFiles/snake_CMake.dir/main.cpp.obj	13623777b1610699
-1973	9445	7796634107719931	CMakeFiles/snake_CMake.dir/snake_CMake_autogen/mocs_compilation.cpp.obj	24f40434bfb9332e
-1983	9509	7796634107809697	CMakeFiles/snake_CMake.dir/mainwindow.cpp.obj	aa6e196f58251e1
-63	390	7796634794415123	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-63	390	7796634794415123	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-63	390	7796634794415123	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-63	390	7796634794415123	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-392	5470	7796634797706298	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5470	6339	7796634848480531	snake_CMake.exe	7f58321cbf618569
-80	500	7796983293398282	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-80	500	7796983293398282	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-80	500	7796983293398282	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-80	500	7796983293398282	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-503	5324	7796983297614852	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5324	5747	7796983345829774	snake_CMake.exe	7f58321cbf618569
-68	412	7796986420849091	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-68	412	7796986420849091	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-68	412	7796986420849091	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-68	412	7796986420849091	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-84	446	7796987283518616	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-84	446	7796987283518616	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-84	446	7796987283518616	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-84	446	7796987283518616	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-448	5342	7796987287158336	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5342	5777	7796987336097464	snake_CMake.exe	7f58321cbf618569
-81	401	7796988004757055	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-81	401	7796988004757055	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-81	401	7796988004757055	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-81	401	7796988004757055	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-402	5451	7796988007960658	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5451	5898	7796988058453459	snake_CMake.exe	7f58321cbf618569
-75	403	7796989664996048	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-75	403	7796989664996048	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-75	403	7796989664996048	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-75	403	7796989664996048	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-405	5239	7796989668297711	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5239	5634	7796989716641709	snake_CMake.exe	7f58321cbf618569
-76	417	7796990582535563	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-76	417	7796990582535563	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-76	417	7796990582535563	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-76	417	7796990582535563	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-419	5159	7796990585966383	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5159	5604	7796990633370024	snake_CMake.exe	7f58321cbf618569
-82	405	7796993246535260	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-82	405	7796993246535260	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-82	405	7796993246535260	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-82	405	7796993246535260	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-407	5309	7796993249786577	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5310	5705	7796993298805489	snake_CMake.exe	7f58321cbf618569
-77	420	7796995271198768	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-77	420	7796995271198768	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-77	420	7796995271198768	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-77	420	7796995271198768	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-422	5142	7796995274649535	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5142	5535	7796995321845575	snake_CMake.exe	7f58321cbf618569
-92	420	7796997261627667	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-92	420	7796997261627667	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-92	420	7796997261627667	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-92	420	7796997261627667	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-422	5165	7796997264928834	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5165	5575	7796997312352033	snake_CMake.exe	7f58321cbf618569
-89	423	7796999000165841	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-89	423	7796999000165841	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-89	423	7796999000165841	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-89	423	7796999000165841	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-425	5210	7796999003526860	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5210	5605	7796999051369991	snake_CMake.exe	7f58321cbf618569
-112	495	7797177836443805	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-112	495	7797177836443805	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-112	495	7797177836443805	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-112	495	7797177836443805	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-497	5590	7797177840293479	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5591	6088	7797177891230055	snake_CMake.exe	7f58321cbf618569
-78	419	7797178575926112	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-78	419	7797178575926112	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-78	419	7797178575926112	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-78	419	7797178575926112	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-421	5351	7797178579351349	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5351	5735	7797178628655127	snake_CMake.exe	7f58321cbf618569
-76	487	7797178913310100	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-76	487	7797178913310100	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-76	487	7797178913310100	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
-76	487	7797178913310100	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
-489	5265	7797178917439063	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
-5265	5652	7797178965201343	snake_CMake.exe	7f58321cbf618569
+552	890	7806175132475365	CMakeFiles/snake_CMake.dir/snake_CMake_autogen/EWIEGA46WW/qrc_resource.cpp.obj	b7237fcd04be94b9
+387	546	7806175132206069	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/EWIEGA46WW/qrc_resource.cpp	e53e95032d568942
+86	425	7806390328757536	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+86	425	7806390328757536	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+86	425	7806390328757536	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+86	425	7806390328757536	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+479	9501	7804956303397827	CMakeFiles/snake_CMake.dir/helpfield.cpp.obj	8b93ec2bb9ce17fb
+1981	9231	7805826042024302	CMakeFiles/snake_CMake.dir/main.cpp.obj	13623777b1610699
+1975	9574	7805826041974420	CMakeFiles/snake_CMake.dir/snake_CMake_autogen/mocs_compilation.cpp.obj	24f40434bfb9332e
+387	546	7806175132206069	snake_CMake_autogen/EWIEGA46WW/qrc_resource.cpp	e53e95032d568942
+1987	9594	7805826042084137	CMakeFiles/snake_CMake.dir/mainwindow.cpp.obj	aa6e196f58251e1
+429	5354	7806387049242524	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
+5354	5742	7806387098500801	snake_CMake.exe	23b2f428fae2577e
+71	493	7806390454679142	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+71	493	7806390454679142	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+71	493	7806390454679142	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+71	493	7806390454679142	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+494	7183	7806390458907835	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
+7184	7665	7806390525798973	snake_CMake.exe	23b2f428fae2577e
+84	430	7806392101565341	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+84	430	7806392101565341	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+84	430	7806392101565341	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+84	430	7806392101565341	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+431	6737	7806392105036061	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
+6737	7237	7806392168097441	snake_CMake.exe	23b2f428fae2577e
+81	424	7806393742554728	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+81	424	7806393742554728	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+81	424	7806393742554728	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+81	424	7806393742554728	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+426	7277	7806393745995529	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
+7277	7745	7806393814502350	snake_CMake.exe	23b2f428fae2577e
+85	449	7806397282485472	snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+85	449	7806397282485472	snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+85	449	7806397282485472	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/timestamp	df1ed0a45ffaa633
+85	449	7806397282485472	C:/Users/sauli/User_Test_Program/C_C++/Finally project C++/snake_CMake/build/Desktop_Qt_5_15_16_shared_MinGW_w64_MINGW64_MSYS2-Debug/snake_CMake_autogen/mocs_compilation.cpp	df1ed0a45ffaa633
+451	6582	7806397286135711	CMakeFiles/snake_CMake.dir/game.cpp.obj	71842da52eca9fd7
+6582	7043	7806397347451756	snake_CMake.exe	23b2f428fae2577e

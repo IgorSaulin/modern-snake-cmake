@@ -1,5 +1,8 @@
 #include "game.h"
 #include <QtMath> //Подключается для работы с синусом и косинусом
+#include <QDebug>
+//#include <QMatrix> //Подключение модуля для работы с матрицами
+#include <QTransform>
 
 bool logic_value_end_game; //Переменная защищает от двойного срабатывания функции завершения игры
 //Во время игры возможно одновременное срабатывания окончания игры как от пересечения звейки с самой собой, так и от
@@ -24,6 +27,7 @@ GameField::GameField()
 void GameField::paintEvent(QPaintEvent *e) //Отрисовка самой змейки
 {
     Q_UNUSED(e);
+    loadImage(); //Вызов функции для отрисовки изображения
     QBrush gameFieldBrush (QColor(139, 144, 163), Qt::SolidPattern); //Цвет для заливки игрового поля
     QBrush snakeBrush (QColor(140, 206, 147), Qt::SolidPattern); //Цвет для заливки змейки
     QBrush foodBrush (QColor(247, 163, 123), Qt::SolidPattern); //Цвет для заливки еды
@@ -45,11 +49,28 @@ void GameField::paintEvent(QPaintEvent *e) //Отрисовка самой зм�
     painter.setPen(QColor(0, 0, 0));//контуру возвращается черый цвет
     for(int i = 0; i < m_snake->m_snakeBody.size(); i++)
     {
-        painter.drawEllipse(m_snake->m_snakeBody[i] -> m_x * m_snakeItemSize, m_snake->m_snakeBody[i] -> m_y * m_snakeItemSize, m_snakeItemSize, m_snakeItemSize);
+        //Для первого элемента будет подгружаться особая картинка - голова змейки
+        if (i == 0)
+        {
+            QRectF target_snake_head(m_snake->m_snakeBody[i] ->m_x  * m_snakeItemSize, m_snake->m_snakeBody[i] ->m_y  * m_snakeItemSize, m_snakeItemSize + 3, m_snakeItemSize + 3);
+            painter.drawImage(target_snake_head, snake_head);
+        }
+
+        else
+        {
+            //painter.drawEllipse(m_snake->m_snakeBody[i] -> m_x * m_snakeItemSize, m_snake->m_snakeBody[i] -> m_y * m_snakeItemSize, m_snakeItemSize, m_snakeItemSize);
+            QRectF target_snake_body(m_snake->m_snakeBody[i] ->m_x  * m_snakeItemSize, m_snake->m_snakeBody[i] ->m_y  * m_snakeItemSize, m_snakeItemSize, m_snakeItemSize);
+            painter.drawImage(target_snake_body, snake_body);
+        }
+
     }
     //Отрисовка еды
     painter.setBrush(foodBrush); //Кисть для отрисовки еды
-    painter.drawEllipse(m_food->m_x * m_snakeItemSize, m_food->m_y * m_snakeItemSize, m_snakeItemSize, m_snakeItemSize);
+    //painter.drawEllipse(m_food->m_x * m_snakeItemSize, m_food->m_y * m_snakeItemSize, m_snakeItemSize, m_snakeItemSize);
+
+    //Отрисовка яблока
+    QRectF target_apple(m_food->m_x * m_snakeItemSize, m_food->m_y * m_snakeItemSize, m_snakeItemSize + 3, m_snakeItemSize + 3);
+    painter.drawImage(target_apple, apple);
 
     painter.end();
     m_isMoveBlocked = false; //Блокировка снимается после каждой смены кадра
@@ -248,30 +269,51 @@ void GameField::MoveSnakeSlot()
     SnakeItem *newSnakeItem; //Голова змейки
     if(m_snake->m_snakeDirection == Snake::SnakeDirection::right)
     {
+        /*Использование матричных вычислений:
+         1. Составляется матрица перехода(поворота)
+         2. Единичный вектор i(1, 0) поворачивается на за счет матрицы перехода;
+         3. Координаты новой точки - конца ветора прибавляются к текущим координатам головы змейки*/
+
+        QMatrix rotationMatrix(qCos(DegreesToRadians(angle)), qSin(DegreesToRadians(angle)), -qSin(DegreesToRadians(angle)), qCos(DegreesToRadians(angle)), 0, 0);
+        auto matrix = rotationMatrix.map(QPointF(1, 0));
+
         //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + 1, m_snake->m_snakeBody[0]->m_y);
-        newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + qCos(DegreesToRadians(angle)), m_snake->m_snakeBody[0]->m_y - qSin(DegreesToRadians(angle)));
+        //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + qCos(DegreesToRadians(angle)), m_snake->m_snakeBody[0]->m_y - qSin(DegreesToRadians(angle)));
+        newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + matrix.x(), m_snake->m_snakeBody[0]->m_y - matrix.y());
     }
 
     else if(m_snake->m_snakeDirection == Snake::SnakeDirection::left)
     {
+        QMatrix rotationMatrix(qCos(DegreesToRadians(angle)), qSin(DegreesToRadians(angle)), -qSin(DegreesToRadians(angle)), qCos(DegreesToRadians(angle)), 0, 0);
+        auto matrix = rotationMatrix.map(QPointF(1, 0));
+
         //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x - 1, m_snake->m_snakeBody[0]->m_y);
-        newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + qCos(DegreesToRadians(angle)), m_snake->m_snakeBody[0]->m_y - qSin(DegreesToRadians(angle)));
+        //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + qCos(DegreesToRadians(angle)), m_snake->m_snakeBody[0]->m_y - qSin(DegreesToRadians(angle)));
+        newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + matrix.x(), m_snake->m_snakeBody[0]->m_y - matrix.y());
         qInfo() << "Left";
         qInfo() << "Angle = " << angle;
     }
 
     else if(m_snake->m_snakeDirection == Snake::SnakeDirection::up)
     {
+        QMatrix rotationMatrix(qCos(DegreesToRadians(angle)), qSin(DegreesToRadians(angle)), -qSin(DegreesToRadians(angle)), qCos(DegreesToRadians(angle)), 0, 0);
+        auto matrix = rotationMatrix.map(QPointF(1, 0));
+
         //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x, m_snake->m_snakeBody[0]->m_y - 1);
-        newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + qCos(DegreesToRadians(angle)), m_snake->m_snakeBody[0]->m_y - qSin(DegreesToRadians(angle)));
+        //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + qCos(DegreesToRadians(angle)), m_snake->m_snakeBody[0]->m_y - qSin(DegreesToRadians(angle)));
+        newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + matrix.x(), m_snake->m_snakeBody[0]->m_y - matrix.y());
         qInfo() << "Up";
         qInfo() << "Angle = " << angle;
     }
 
     else
     {
+        QMatrix rotationMatrix(qCos(DegreesToRadians(angle)), qSin(DegreesToRadians(angle)), -qSin(DegreesToRadians(angle)), qCos(DegreesToRadians(angle)), 0, 0);
+        auto matrix = rotationMatrix.map(QPointF(1, 0));
+
         //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x, m_snake->m_snakeBody[0]->m_y + 1);
-        newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + qCos(DegreesToRadians(angle)), m_snake->m_snakeBody[0]->m_y - qSin(DegreesToRadians(angle)));
+        //newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + qCos(DegreesToRadians(angle)), m_snake->m_snakeBody[0]->m_y - qSin(DegreesToRadians(angle)));
+        newSnakeItem = new SnakeItem(m_snake->m_snakeBody[0]->m_x + matrix.x(), m_snake->m_snakeBody[0]->m_y - matrix.y());
         qInfo() << "Down";
         qInfo() << "Angle = " << angle;
     }
@@ -349,6 +391,13 @@ void GameField::MoveSnakeSlot()
 
     m_snake->m_snakeBody.insert(0, newSnakeItem); //Добавление змейки в начало
     repaint(); //Вызов таймера через функцию
+}
+
+void GameField::loadImage() //Реализация метода для вывода изображений
+{
+    apple.load(":/resource/img/apple.png");
+    snake_head.load(":/resource/img/snake_head.png");
+    snake_body.load(":/resource/img/snake_body.png");
 }
 
 SnakeItem::SnakeItem(qreal x, qreal y)

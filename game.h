@@ -60,6 +60,10 @@ protected:
     void keyPressEvent(QKeyEvent *e) override;
 
 private:
+    QImage apple; //Переменная для хранения яблока
+    QImage snake_head; //Перемення для хранения изображения головы змейки
+    QImage snake_body;
+
     Snake *m_snake;
     SnakeItem *m_food; //Еда для змейки
     int m_snakeItemSize;
@@ -73,6 +77,8 @@ private:
     void GameOver(); //Функция проигрыш
     void StartNewGame(); //Функция начала новой игры
     void CreateFood(); //Класс для создания еды
+
+    void loadImage(); //Метод для отрисовки картинок
 
 private slots: //Создание слотов
     void MoveSnakeSlot();
